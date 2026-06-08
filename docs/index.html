@@ -18,112 +18,116 @@
         .oyun-resim { max-width: 100%; height: auto; max-height: 300px; display: block; margin-bottom: 15px; border-radius: 5px; background-color: #ddd; }
         .indir-butonu { display: inline-block; background: green; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .indir-butonu:hover { background: darkgreen; }
+        .iletisim-bilgi { margin-top: 15px; }
+        .iletisim-bilgi p { margin: 5px 0; }
+        .iletisim-bilgi a { color: blue; text-decoration: none; font-weight: bold; }
+        .iletisim-bilgi a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#ana-sayfa">Ana Sayfa</a>
-        <a href="#oyunlarim">Oyunlarım</a>
+        <a href="#uygulamalar-oyunlar">Uygulamalar / Oyunlar</a>
         <a href="#iletisim">İletişim</a>
     </nav>
 
     <div id="ana-sayfa" class="content-section">
         <h1>Hoş Geldiniz</h1>
-        <p>Bu benim oyunlarımı sergilediğim kişisel sitem.</p>
+        <p>Bu benim oyun ve uygulamaları yapıp paylaştığım sitedir.</p>
     </div>
 
-    <div id="oyunlarim" class="content-section">
-        <h2>Oyunlarım</h2>
-        <p>Aşağıdaki oyun başlıklarına tıklayarak detayları ve indirme bağlantılarını görebilirsiniz.</p>
+    <div id="uygulamalar-oyunlar" class="content-section">
+        <h2>Uygulamalar / Oyunlar</h2>
+        <p>Aşağıdaki başlıklara tıklayarak detayları ve indirme bağlantılarını görebilirsiniz.</p>
         
         <div class="oyun-listesi">
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 1 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">1. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+1+Resmi" alt="Oyun 1" class="oyun-resim">
-                    <p>Oyun 1 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=1.+Baslik+Resmi" alt="1. Başlık" class="oyun-resim">
+                    <p>1. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_1" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 2 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">2. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+2+Resmi" alt="Oyun 2" class="oyun-resim">
-                    <p>Oyun 2 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=2.+Baslik+Resmi" alt="2. Başlık" class="oyun-resim">
+                    <p>2. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_2" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 3 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">3. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+3+Resmi" alt="Oyun 3" class="oyun-resim">
-                    <p>Oyun 3 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=3.+Baslik+Resmi" alt="3. Başlık" class="oyun-resim">
+                    <p>3. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_3" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 4 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">4. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+4+Resmi" alt="Oyun 4" class="oyun-resim">
-                    <p>Oyun 4 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=4.+Baslik+Resmi" alt="4. Başlık" class="oyun-resim">
+                    <p>4. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_4" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 5 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">5. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+5+Resmi" alt="Oyun 5" class="oyun-resim">
-                    <p>Oyun 5 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=5.+Baslik+Resmi" alt="5. Başlık" class="oyun-resim">
+                    <p>5. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_5" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 6 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">6. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+6+Resmi" alt="Oyun 6" class="oyun-resim">
-                    <p>Oyun 6 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=6.+Baslik+Resmi" alt="6. Başlık" class="oyun-resim">
+                    <p>6. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_6" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 7 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">7. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+7+Resmi" alt="Oyun 7" class="oyun-resim">
-                    <p>Oyun 7 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=7.+Baslik+Resmi" alt="7. Başlık" class="oyun-resim">
+                    <p>7. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_7" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 8 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">8. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+8+Resmi" alt="Oyun 8" class="oyun-resim">
-                    <p>Oyun 8 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=8.+Baslik+Resmi" alt="8. Başlık" class="oyun-resim">
+                    <p>8. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_8" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 9 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">9. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+9+Resmi" alt="Oyun 9" class="oyun-resim">
-                    <p>Oyun 9 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=9.+Baslik+Resmi" alt="9. Başlık" class="oyun-resim">
+                    <p>9. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_9" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
 
             <div class="oyun-kartı">
-                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 10 <span>▼</span></h3>
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">10. Başlık <span>▼</span></h3>
                 <div class="oyun-detay">
-                    <img src="https://via.placeholder.com/600x300?text=Oyun+10+Resmi" alt="Oyun 10" class="oyun-resim">
-                    <p>Oyun 10 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <img src="https://via.placeholder.com/600x300?text=10.+Baslik+Resmi" alt="10. Başlık" class="oyun-resim">
+                    <p>10. Başlık hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
                     <a href="BURAYA_LINK_GELECEK_10" class="indir-butonu">İndir (APK)</a>
                 </div>
             </div>
@@ -132,7 +136,12 @@
 
     <div id="iletisim" class="content-section">
         <h2>İletişim</h2>
-        <p>Bana e-posta yoluyla veya sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
+        <p>Bana aşağıdaki bilgiler üzerinden veya sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
+        
+        <div class="iletisim-bilgi">
+            <p><strong>E-posta:</strong> <a href="mailto:BURAYA_EMAIL_GELECEK@gmail.com">BURAYA_EMAIL_GELECEK@gmail.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+905000000000">+90 500 000 00 00</a></p>
+        </div>
     </div>
 
     <script>
