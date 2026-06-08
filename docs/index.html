@@ -5,28 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oyun Portfolyom</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
-        nav a { margin-right: 15px; text-decoration: none; color: blue; }
-        .oyun-kartı { border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 8px; }
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #333; }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+        nav a { margin-right: 15px; text-decoration: none; color: blue; font-weight: bold; }
+        .content-section { padding-top: 70px; margin-bottom: 40px; }
+        .oyun-listesi { display: flex; flex-direction: column; gap: 15px; max-width: 800px; }
+        .oyun-kartı { border: 1px solid #ccc; background: #fff; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }
+        .oyun-baslik { background: #eee; padding: 15px; margin: 0; cursor: pointer; user-select: none; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+        .oyun-baslik:hover { background: #e0e0e0; }
+        .oyun-detay { display: none; padding: 15px; border-top: 1px solid #eee; }
+        .oyun-detay.aktif { display: block; }
+        .oyun-resim { max-width: 100%; height: auto; max-height: 300px; display: block; margin-bottom: 15px; border-radius: 5px; background-color: #ddd; }
+        .indir-butonu { display: inline-block; background: green; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .indir-butonu:hover { background: darkgreen; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#">Ana Sayfa</a>
-        <a href="#">Oyunlarım</a>
-        <a href="#">İletişim</a>
+        <a href="#ana-sayfa">Ana Sayfa</a>
+        <a href="#oyunlarim">Oyunlarım</a>
+        <a href="#iletisim">İletişim</a>
     </nav>
 
-    <h1>Hoş Geldiniz</h1>
-    <p>Bu benim oyunlarımı sergilediğim kişisel sitem.</p>
-
-    <div class="oyun-kartı">
-        <h2>Oyun Adı 1</h2>
-        <p>Oyun hakkında kısa açıklama.</p>
-        <!-- Buraya Itch.io veya GitHub Releases linkini ekleyebilirsin -->
-        <a href="BURAYA_LINK_GELECEK" style="background: green; color: white; padding: 10px; border-radius: 5px;">İndir (APK)</a>
+    <div id="ana-sayfa" class="content-section">
+        <h1>Hoş Geldiniz</h1>
+        <p>Bu benim oyunlarımı sergilediğim kişisel sitem.</p>
     </div>
+
+    <div id="oyunlarim" class="content-section">
+        <h2>Oyunlarım</h2>
+        <p>Aşağıdaki oyun başlıklarına tıklayarak detayları ve indirme bağlantılarını görebilirsiniz.</p>
+        
+        <div class="oyun-listesi">
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 1 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+1+Resmi" alt="Oyun 1" class="oyun-resim">
+                    <p>Oyun 1 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_1" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 2 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+2+Resmi" alt="Oyun 2" class="oyun-resim">
+                    <p>Oyun 2 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_2" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 3 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+3+Resmi" alt="Oyun 3" class="oyun-resim">
+                    <p>Oyun 3 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_3" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 4 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+4+Resmi" alt="Oyun 4" class="oyun-resim">
+                    <p>Oyun 4 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_4" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 5 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+5+Resmi" alt="Oyun 5" class="oyun-resim">
+                    <p>Oyun 5 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_5" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 6 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+6+Resmi" alt="Oyun 6" class="oyun-resim">
+                    <p>Oyun 6 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_6" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 7 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+7+Resmi" alt="Oyun 7" class="oyun-resim">
+                    <p>Oyun 7 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_7" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 8 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+8+Resmi" alt="Oyun 8" class="oyun-resim">
+                    <p>Oyun 8 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_8" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 9 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+9+Resmi" alt="Oyun 9" class="oyun-resim">
+                    <p>Oyun 9 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_9" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+
+            <div class="oyun-kartı">
+                <h3 class="oyun-baslik" onclick="detayGoster(this)">Oyun Adı 10 <span>▼</span></h3>
+                <div class="oyun-detay">
+                    <img src="https://via.placeholder.com/600x300?text=Oyun+10+Resmi" alt="Oyun 10" class="oyun-resim">
+                    <p>Oyun 10 hakkında kısa açıklama ve detaylar bu kısımda yer alır.</p>
+                    <a href="BURAYA_LINK_GELECEK_10" class="indir-butonu">İndir (APK)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="iletisim" class="content-section">
+        <h2>İletişim</h2>
+        <p>Bana e-posta yoluyla veya sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
+    </div>
+
+    <script>
+        function detayGoster(eleman) {
+            var detay = eleman.nextElementSibling;
+            var ok = eleman.querySelector('span');
+            
+            if (detay.classList.contains('aktif')) {
+                detay.classList.remove('aktif');
+                ok.textContent = '▼';
+            } else {
+                detay.classList.add('aktif');
+                ok.textContent = '▲';
+            }
+        }
+    </script>
 
 </body>
 </html>
