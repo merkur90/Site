@@ -7,8 +7,9 @@
     <style>
         body { font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #333; }
         nav { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
-        nav a { margin-right: 15px; text-decoration: none; color: blue; font-weight: bold; }
-        .content-section { padding-top: 70px; margin-bottom: 40px; }
+        nav a { margin-right: 15px; text-decoration: none; color: blue; font-weight: bold; cursor: pointer; }
+        .content-section { padding-top: 70px; margin-bottom: 40px; display: none; } /* Tüm bölümler başlangıçta gizlenir */
+        #ana-sayfa { display: block; } /* Sadece ana sayfa ilk açılışta gösterilir */
         .oyun-listesi { display: flex; flex-direction: column; gap: 15px; max-width: 800px; }
         .oyun-kartı { border: 1px solid #ccc; background: #fff; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }
         .oyun-baslik { background: #eee; padding: 15px; margin: 0; cursor: pointer; user-select: none; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
@@ -27,9 +28,9 @@
 <body>
 
     <nav>
-        <a href="#ana-sayfa">Ana Sayfa</a>
-        <a href="#uygulamalar-oyunlar">Uygulamalar / Oyunlar</a>
-        <a href="#iletisim">İletişim</a>
+        <a onclick="bolumGoster('ana-sayfa')">Ana Sayfa</a>
+        <a onclick="bolumGoster('uygulama-oyun')">Uygulama / Oyun</a>
+        <a onclick="bolumGoster('iletisim')">İletişim</a>
     </nav>
 
     <div id="ana-sayfa" class="content-section">
@@ -37,8 +38,8 @@
         <p>Bu benim oyun ve uygulamaları yapıp paylaştığım sitedir.</p>
     </div>
 
-    <div id="uygulamalar-oyunlar" class="content-section">
-        <h2>Uygulamalar / Oyunlar</h2>
+    <div id="uygulama-oyun" class="content-section">
+        <h2>Uygulama / Oyun</h2>
         <p>Aşağıdaki başlıklara tıklayarak detayları ve indirme bağlantılarını görebilirsiniz.</p>
         
         <div class="oyun-listesi">
@@ -139,12 +140,23 @@
         <p>Bana aşağıdaki bilgiler üzerinden veya sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
         
         <div class="iletisim-bilgi">
-            <p><strong>E-posta:</strong> <a href="mailto:BURAYA_EMAIL_GELECEK@gmail.com">BURAYA_EMAIL_GELECEK@gmail.com</a></p>
+            <p><strong>E-posta:</strong> <a href="mailto:_EMAIL_@gmail.com">_EMAIL_@gmail.com</a></p>
             <p><strong>Telefon:</strong> <a href="tel:+905000000000">+90 500 000 00 00</a></p>
         </div>
     </div>
 
     <script>
+        // Tıklanan butona göre sadece o bölümün içeriğini gösterir, diğerlerini tamamen gizler
+        function bolumGoster(bolumId) {
+            var bolumler = document.querySelectorAll('.content-section');
+            bolumler.forEach(function(bolum) {
+                bolum.style.display = 'none';
+            });
+            
+            document.getElementById(bolumId).style.display = 'block';
+        }
+
+        // Akordeon listesindeki başlıklara tıklayınca alt detayları açıp kapatır
         function detayGoster(eleman) {
             var detay = eleman.nextElementSibling;
             var ok = eleman.querySelector('span');
