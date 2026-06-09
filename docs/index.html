@@ -5,32 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesut Arslan </title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; color: #333; }
-        nav { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
-        nav a { margin-right: 15px; text-decoration: none; color: blue; font-weight: bold; cursor: pointer; }
-        .content-section { padding-top: 70px; margin-bottom: 40px; display: none; } /* Tüm bölümler başlangıçta gizlenir */
+        /* Modern CSS Değişkenleri ve Tema Ayarları */
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --text-muted: #7f8c8d;
+            --primary-color: #3498db;
+            --primary-hover: #2980b9;
+            --success-color: #2ecc71;
+            --success-hover: #27ae60;
+            --border-color: #e2e8f0;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px;
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+        }
+
+        /* Sabit ve Profesyonel Navigasyon Barı */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            background: var(--card-bg); 
+            padding: 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); 
+            z-index: 1000; 
+            display: flex;
+            justify-content: center;
+        }
+
+        nav .nav-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            padding: 15px 20px;
+        }
+
+        nav a { 
+            margin-right: 25px; 
+            text-decoration: none; 
+            color: var(--text-muted); 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover { 
+            color: var(--primary-color); 
+        }
+
+        /* İçerik Alanları ve Yumuşak Açılış Animasyonu */
+        .content-section { 
+            padding-top: 90px; 
+            margin: 0 auto 40px auto; 
+            max-width: 800px;
+            display: none; 
+            animation: fadeIn 0.4s ease;
+        }
+
         #ana-sayfa { display: block; } /* Sadece ana sayfa ilk açılışta gösterilir */
-        .oyun-listesi { display: flex; flex-direction: column; gap: 15px; max-width: 800px; }
-        .oyun-kartı { border: 1px solid #ccc; background: #fff; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; }
-        .oyun-baslik { background: #eee; padding: 15px; margin: 0; cursor: pointer; user-select: none; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
-        .oyun-baslik:hover { background: #e0e0e0; }
-        .oyun-detay { display: none; padding: 15px; border-top: 1px solid #eee; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-size: 2.5rem; color: var(--text-color); margin-bottom: 10px; font-weight: 700; }
+        h2 { font-size: 1.8rem; color: var(--text-color); margin-bottom: 15px; font-weight: 600; }
+        p { color: var(--text-muted); font-size: 1.05rem; }
+
+        /* Gelişmiş Listeleme ve Akordeon Kart Tasarımları */
+        .oyun-listesi { display: flex; flex-direction: column; gap: 20px; max-width: 800px; }
+
+        .oyun-kartı { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        }
+
+        .oyun-kartı:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+        }
+
+        .oyun-baslik { 
+            background: var(--card-bg); 
+            padding: 20px; 
+            margin: 0; 
+            cursor: pointer; 
+            user-select: none; 
+            font-size: 1.15rem; 
+            font-weight: 600;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .oyun-baslik:hover { 
+            background: #f8fafc; 
+            color: var(--primary-color);
+        }
+
+        .oyun-baslik span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .oyun-detay { 
+            display: none; 
+            padding: 20px; 
+            border-top: 1px solid var(--border-color); 
+            background: #fafbfc;
+        }
+
         .oyun-detay.aktif { display: block; }
-        .oyun-resim { max-width: 100%; height: auto; max-height: 300px; display: block; margin-bottom: 15px; border-radius: 5px; background-color: #ddd; }
-        .indir-butonu { display: inline-block; background: green; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; }
-        .indir-butonu:hover { background: darkgreen; }
-        .iletisim-bilgi { margin-top: 15px; }
-        .iletisim-bilgi p { margin: 5px 0; }
-        .iletisim-bilgi a { color: blue; text-decoration: none; font-weight: bold; }
-        .iletisim-bilgi a:hover { text-decoration: underline; }
+
+        .oyun-resim { 
+            width: 100%; 
+            height: auto; 
+            max-height: 350px; 
+            display: block; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            background-color: #ddd; 
+        }
+
+        /* Modern Etkileşimli Buton Yapısı */
+        .indir-butonu { 
+            display: inline-block; 
+            background: var(--success-color); 
+            color: white; 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            margin-top: 10px; 
+            transition: background 0.2s ease, transform 0.1s ease;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(46, 204, 113, 0.2);
+        }
+
+        .indir-butonu:hover { 
+            background: var(--success-hover); 
+            transform: translateY(-1px);
+        }
+
+        .indir-butonu:active {
+            transform: translateY(0);
+        }
+
+        /* Profesyonel İletişim Kartı Düzenlemesi */
+        .iletisim-bilgi { 
+            margin-top: 25px; 
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .iletisim-bilgi p { 
+            margin: 12px 0; 
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .iletisim-bilgi strong {
+            width: 90px;
+            color: var(--text-color);
+        }
+
+        .iletisim-bilgi a { 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.2s ease;
+        }
+
+        .iletisim-bilgi a:hover { 
+            color: var(--primary-hover);
+            text-decoration: underline; 
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a onclick="bolumGoster('ana-sayfa')">Ana Sayfa</a>
-        <a onclick="bolumGoster('uygulama-oyun')">Uygulama / Oyun</a>
-        <a onclick="bolumGoster('iletisim')">İletişim</a>
+        <div class="nav-container">
+            <a onclick="bolumGoster('ana-sayfa')">Ana Sayfa</a>
+            <a onclick="bolumGoster('uygulama-oyun')">Uygulama / Oyun</a>
+            <a onclick="bolumGoster('iletisim')">İletişim</a>
+        </div>
     </nav>
 
     <div id="ana-sayfa" class="content-section">
@@ -156,7 +337,7 @@
             document.getElementById(bolumId).style.display = 'block';
         }
 
-        // Akordeon listesindeki başlıklara tıklayınca alt detayları açıp kapatır
+        // Akordeon listesindeki başlıklara tıklayınca alt detayları açıp kapatır ve oku çevirir
         function detayGoster(eleman) {
             var detay = eleman.nextElementSibling;
             var ok = eleman.querySelector('span');
@@ -164,9 +345,11 @@
             if (detay.classList.contains('aktif')) {
                 detay.classList.remove('aktif');
                 ok.textContent = '▼';
+                ok.style.transform = 'rotate(0deg)';
             } else {
                 detay.classList.add('aktif');
                 ok.textContent = '▲';
+                ok.style.transform = 'rotate(180deg)';
             }
         }
     </script>
